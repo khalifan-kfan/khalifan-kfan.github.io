@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Project Title</title>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/frame.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="css/controls.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="css/custom.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/menu.js"></script>
+  <style>
+    .menu-embedding {
+      color: rgb(255, 255, 255) !important;
+      opacity: 1 !important;
+      font-weight: 700 !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="menu-container">
+    <div class="menu">
+      <div class="menu-table flex-row-space-between">
+        <div class="logo flex-row-center">
+          <a href="index.html">Cinema Junkie</a>
+        </div>
+        <a class="menu-button" tabindex="0" href="javascript:void(0)">
+          <img src="img/menu.png">
+        </a>
+        <div class="menu-items flex-row-center flex-item">
+          <a href="index.html" class="menu-index">Overview</a>
+          <a href="demo.html" class="menu-embedding">Functionality Demo Video </a>
+          <a href="https://github.com/khalifan-kfan/cinema_junkies">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+ <div class="content-container">
+  <div class="content"> 
+    <div class="content-table flex-column">
+    <div class="flex-row">
+    <div class="flex-item flex-column">
+      <h2 class="add-top-margin">Functionality and demonstration.</h2>
+      <hr>
+      <p class="text">
+       A new user could see the screening movie but without loging in or signing up, they will  no be able to 
+       access their screening schedules to buy a ticket. This prompted us to have a user authentication Api
+       intergreted into the application and went with google firebase for its flexibility. The only information required
+       from the user is there email password and phone number in order to procceed and get the best experince.
+      </p>
+    </div>
+  </div>
+  <div class="flex-row">
+    <div class="flex-item flex-item-stretch flex-column">
+      <img class="image" src="img/numbers.jpg">
+    </div>
+    <div class="flex-item flex-item-stretch flex-column">
+      <p class="text">
+       We scouted cinemas around kampala and found out that the seat numbering system is almost similer across all.
+       Therefore since we havent gotten official permission to access any cinema's schedule yet we created a test movies schedule
+       in firestore(a collection-based data base) from the firebase API to successfully carry out test which proved quite
+       help full since the database is already remotely hosted. 
+      </p>
+    </div>
+  </div>
+  <div class="flex-row">
+    <div class="flex-item flex-item-stretch flex-column">
+      <video preload controls autoplay loop muted playsinline class="image">
+        <source src="vid/demo2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="flex-item flex-item-stretch flex-column">
+      <p class="text">
+        The video by the side demonstrates a use case of a logged in user who has all tabs unlocked (the Dashboard and history tab).
+        They should be then able to see all the screening days of the movie since movie charges are determined according to which
+        day of the week it is, futher more, when a day is picked then they should be prompted to pick a cinema hall, look through the 
+        various times that movie will screen that day,see the available seats per time and then procceed to a screen where they should 
+        chose a seat or seats.
+        The seats interface has automatic calculation system base on the number of seats chosen and the days price and after the user 
+        should procceed to to the payment screen which is the last step in processing their ticket.
+        For payment we used the MTN MOMO open Api, though in the demonstration its the test version of the Api still under use.
+        The payment screen prompts a user for their active number to be used for payment and once they confirm to pay they should recieve
+        a confirmation pin entry request and when they do the app should pick it up in the background and their ticket should be generated
+        so the user can access it on their Dashboard.
+      </p>
+    </div>
+  </div>
+  <div class="flex-row">
+    <div class="flex-item flex-column">
+      <p class="text">
+        The Dashboard will contain unused tickets which could either be still not yet screened(active) or already screened
+        but the user missed the date(expired). The use button will only be active on the active tickets other wise it will be invisible
+        and when it is not visible all a user can do is cancel the ticket and have it sent to history for now.
+        The "use" button being visible means the ticket is still active and the button should be pushed (by or around a cinema agent) 
+        with evidence that the user is entering the cinema hall (at the door), and at that instant the ticket is pushed to history so it cant be used twice. 
+
+      </p>
+    </div>
+  </div>
+  <div class="flex-row">
+    <div class="flex-item flex-item-stretch-2 flex-column">
+      <p class="text">
+       The information kept on the ticket is comprised of; 
+       <ul>
+        <li>Details about the movie like the title or thumbnail.</li>
+        <li>If it will be in a 3D cinema or 2D, and whether the sound is Dolby or not.</li>
+        <li>The email of the user who has bought it</li>
+        <li>The cinema hall name and exact date and time the movie will screen.</li>
+        <li>The number of seats bought and the seat number(s) the user booked 
+        </li>
+        <li>Whether the ticket is active or expired.</li>
+        <li>The total amount charged for the seats.
+        </li>
+      </ul>
+      </p>
+    </div>
+    <div class="flex-item flex-item-stretch flex-column">
+      <img class="image" src="img/pic2.jpg">
+    </div>
+  </div>
+  <div class="flex-row">
+    <div class="flex-item flex-item-stretch-2 flex-column">
+      <p class="text">
+       Moving on, the video on the side demonstrates a use case of someone logged out or 
+       new to the application and it clearly shows they
+       can not procceed with out signing up or in, the rest of the procedure is the same.
+      Again this helps establish ticket ownership and alittle bit of authentication.
+      The history tab should include the used and expired tickets, there the use can track their
+      previous interactions with the booking system.
+      This application is quite automatic in that there is no middle man, movie schedule database is updated
+      frequently and all the user sholud do is pay for a seat when ever they see a movie the want.
+      Point to note; The videos show use of an mtn momo test api so any number used returns successfull transactions
+      since we are using a test environment.
+      </p>
+    </div>
+    <div class="flex-item flex-item-stretch flex-column">
+      <video preload controls autoplay loop muted playsinline class="image">
+        <source src="vid/demo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+  <div class="flex-row">
+    <div class="flex-item flex-item-stretch flex-column">
+      <p class="text">
+        Point to note: If you have realised, half of the the problems have been pinned down already most especially the 
+        issue of following covid 19 SOPs for the reopening of cinema halls, no long queues for tickets, no physical handling of tickets,
+        no physical handling of money and the seats available can be spaced appropriatly leaving making balnk seats
+        between two seats unavailable.
+        Its will be good for the community.
+      </p>
+    </div>
+  </div>
+  <div class="flex-row">
+    <div class="flex-item flex-item-stretch flex-column">
+      <p class="text text-small text-italic">
+        Credits: <span class="highlight-text">Makerere University's</span>:CSC department<span class="highlight-text">Github template</span>: <a  href="https://github.com/yenchiah/project-website-template">By yenchiahe</a>
+        <span class="highlight-text">MTN's</span>:open MOMO API  <span class="highlight-text">Google's</span>:firebase API
+      </p>
+    </div>
+  </div>
+  </div>
+</div>  
+</div>
+</body>
+
+</html>
